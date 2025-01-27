@@ -3,8 +3,8 @@ Contributors: nmedia
 Donate link: http://www.najeebmedia.com/donate/
 Tags: woocommerce, woocommerce customizer, personalized woocommerce, add to cart label, customize product page, customize cart page, customize checkout page, enquiry form, product tabs, related products
 Requires at least: 3.9
-Tested up to: 6.4.2
-Stable tag: 3.5
+Tested up to: 6.7.1
+Stable tag: 4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,10 +54,6 @@ settings will handle all for you. Following details and screenshots explaining a
 	<li>After shipping calculator</li>
 </ol>
 
-<h3>WooCommerce Actions/Hooks</h3>
-GoHero using Woocommerce core hooks/actions to customize, zero coding requires. Just install and use.
-<a href="http://www.najeebmedia.com/personalized-woostore-guide">Details Here</a>
-
 <h3>GoHero PRO Features</h3>
 GoHero PRO has more powerful feature and control to customize your store like:
 <ul>
@@ -79,7 +75,7 @@ GoHero PRO has more powerful feature and control to customize your store like:
 Another a cool feature of GoHero PRO version is that you can change Any text from entire site. Like if you want to change 'Billing Address' text on checkout
 page, you can do this with GoHero PRO.
 
-<a href="https://najeebmedia.com/wordpress-plugin/GoHero-for-woocommerce/">Get Pro Version</a>
+<a href="https://najeebmedia.com/wordpress-plugin/woohero-for-woocommerce">Get Pro Version</a>
 
 
 == Installation ==
@@ -117,6 +113,8 @@ Yes, it is compatible with all themes.
 15. Extra tabs show on Product page
 
 == Changelog ==
+= 4.0 Jan 26, 2025 =
+* A security patch is applied.
 = 3.5 December 21, 2022 =
 * Tweaks: Due to some branding issues the plugin name is updated.
 = 3.4 January 19, 2022 =

@@ -3,7 +3,7 @@
 Plugin Name: GoHero
 Plugin URI:  http://www.najeebmedia.com
 Description: GoHero is like a Swiss Army knife for WooCommerce. GoHero holds a bunch of features of many small plugins.
-Version: 3.5
+Version: 4.0
 Author: N-Media
 Text Domain: personalize-woocommerce-cart-page
 WC requires at least: 3.0.0
@@ -18,7 +18,7 @@ if( ! defined('ABSPATH' ) ){ exit; }
 /* ==== Define WC GoHero Constant ===== */
 define( 'WOOH_PATH', untrailingslashit(plugin_dir_path( __FILE__ )) );
 define( 'WOOH_URL', untrailingslashit(plugin_dir_url( __FILE__ )) );
-define( 'WOOH_VERSION', 3.5 );
+define( 'WOOH_VERSION', 4.0 );
 define( 'WOOH_DEBUG', true );
 
 /* **======== plugin includes files ========** */

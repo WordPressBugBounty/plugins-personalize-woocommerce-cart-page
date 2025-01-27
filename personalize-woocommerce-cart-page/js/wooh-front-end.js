@@ -42,8 +42,13 @@ jQuery(function($){
 		$.post(wooh_vars.ajaxurl, data, function(resp){
 			
 // 			console.log(resp);
+      const {success, data} = resp;
 		  
-		  location.reload();
+		  if(success){
+		    location.reload();
+		  } else {
+		    alert(data);
+		  }
 		
 		});
    });

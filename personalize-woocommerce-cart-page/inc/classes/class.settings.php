@@ -140,18 +140,9 @@ class WOOH_Settings {
 		 * hooking up scripts for front-end
 		*/
 		add_action('wp_enqueue_scripts', array($this, 'load_scripts_styles'));
-
-
-		
-		
-		add_action( 'wp_ajax_wooh_action_settings_save_frontend' ,array($this, 'wooh_action_settings_save_frontend') );
-		add_action( 'wp_ajax_nopriv_wooh_action_settings_save_frontend' ,array($this, 'wooh_action_settings_save_frontend') );
-		
 		
 
 	}
-	
-	
 	
 	
 	function remove_cart_item(){
@@ -497,113 +488,6 @@ class WOOH_Settings {
 		
 		$js_vars = array('ajaxurl' => admin_url( 'admin-ajax.php', (is_ssl() ? 'https' : 'http') ));
 		wp_localize_script('wooh-frontend-js', 'wooh_vars', $js_vars);
-	}
-
-	
-	
-	
-	
-	function wooh_action_settings_save_frontend(){
-		
-		if(isset($_REQUEST)){
-		
-			$wooh_key     = sanitize_key($_REQUEST['wooh_key']);
-			$text_value   = null;
-			
-			$key = 'personalize-woocommerce-cart-page'.$wooh_key;
-			
-			switch($key) {
-	    		
-	    		case 'wooh_share':
-	    		case 'wooh_orderitemstable':
-	    		case 'wooh_beforecarttable':
-	    		case 'wooh_beforecartcontents':
-	    		case 'wooh_cartcontents':
-	    		case 'wooh_aftercartcontents':
-	    		case 'wooh_aftercarttable':
-	    		case 'wooh_aftercart':
-	    		case 'wooh_proceedtocheckout':
-	    		case 'wooh_cartcoupon':
-	    		case 'wooh_beforecarttotals':
-	    		case 'wooh_aftercarttotals':
-	    		case 'wooh_beforeminicart':
-	    		case 'wooh_widgetshoppingcartbeforebuttons':
-	    		case 'wooh_afterminicart':
-	    		case 'wooh_carttotalsbeforeshipping':
-	    		case 'wooh_carttotalsaftershipping':
-	    		case 'wooh_carttotalsafterordertotal':
-	    		case 'wooh_carttotalsbeforeordertotal':
-	    		case 'wooh_beforeshippingcalculator':
-	    		case 'wooh_aftershippingcalculator':
-	    		case 'wooh_beforeaddtocartbutton':
-	    		case 'wooh_afteraddtocartbutton':
-	    		case 'wooh_productmetastart':
-	    		case 'wooh_beforeaddtocartform':
-	    		case 'wooh_afteraddtocartform':
-	    		case 'wooh_productmetaend':
-	    		case 'wooh_productfeaturedimage':
-	    		case 'wooh_addtocartmessage':
-	    		case 'wooh_beforecheckoutbillingform':
-	    		case 'wooh_aftercheckoutbillingform':
-	    		case 'wooh_beforecheckoutregistrationform':
-	    		case 'wooh_aftercheckoutregistrationform':
-	    		case 'wooh_beforecheckoutform':
-	    		case 'wooh_checkoutbeforecustomerdetails':
-	    		case 'wooh_checkoutbilling':
-	    		case 'wooh_checkoutshipping':
-	    		case 'wooh_checkoutaftercustomerdetails':
-	    		case 'wooh_aftercheckoutform':
-	    		case 'wooh_beforecheckoutshippingform':
-	    		case 'wooh_aftercheckoutshippingform':
-	    		case 'wooh_beforeordernotes':
-	    		case 'wooh_revieworderaftershipping':
-	    		case 'wooh_afterordernotes':
-	    		case 'wooh_revieworderbeforeshipping':
-	    		case 'wooh_revieworderbeforeordertotal':
-	    		case 'wooh_revieworderafterordertotal':
-	    		case 'wooh_revieworderbeforecartcontents':
-	    		case 'wooh_revieworderaftercartcontents':
-	    		case 'wooh_revieworderbeforepayment':
-	    		case 'wooh_revieworderafterpayment':
-	    		case 'wooh_revieworderbeforesubmit':
-	    		case 'wooh_revieworderaftersubmit':
-	    		case 'wooh_beforecustomerloginform':
-	    		case 'wooh_loginformstart':
-	    		case 'wooh_loginform':
-	    		case 'wooh_loginformend':
-	    		case 'wooh_registerformstart':
-	    		case 'wooh_registerform':
-	    		case 'wooh_registerformend':
-	    		case 'wooh_aftercustomerloginform':
-	    		case 'wooh_beforemyaccount':
-	    		case 'wooh_aftermyaccount':
-	    		case 'wooh_myaccountmyorderstitle':
-	    		case 'wooh_orderdetailsafterordertable':
-	    		case 'wooh_orderdetailsaftercustomerdetails':
-	    		case 'wooh_emailheader':
-	    		case 'wooh_emailbeforeordertable':
-	    		case 'wooh_emailafterordertable':
-	    		case 'wooh_emailordermeta':
-	    		case 'wooh_emailfooter':
-	    		case 'wooh_shortdescription':
-	    		case 'wooh_anytext':
-	    			
-					$text_value =  wp_kses_post($_REQUEST['text_value']);
-				break;
-				
-				default:
-					$text_value =  sanitize_text_field($_REQUEST['text_value']);
-				break;
-	    			
-	    	}
-	      
-			if(update_option($key,$text_value)){
-				remove_query_arg('is_active');
-				wp_send_json('success');
-			}
-			
-		}
-		
 	}
 		
 }
